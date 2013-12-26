@@ -1183,6 +1183,9 @@ class Strace(ApiBase):
       def handle_statfs(self, _args, _result):
         pass
 
+      def handle_newfstatat(self, _args, _result):
+        pass
+
       def handle_utimensat(self, _args, _result):
         pass
 
