@@ -1163,6 +1163,10 @@ class Strace(ApiBase):
       def handle_stat(self, args, _result):
         self._handle_file(args[0], Results.File.TOUCHED)
 
+      @parse_args(r'\"(.+?)\", \{.+?, \.\.\.\}', True)
+      def handle_stat64(self, args, _result):
+        self._handle_file(args[0], Results.File.TOUCHED)
+
       @parse_args(r'^\"(.+?)\", \"(.+?)\"$', True)
       def handle_symlink(self, args, _result):
         self._handle_file(args[0], Results.File.TOUCHED)
