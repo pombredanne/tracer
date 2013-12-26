@@ -1191,11 +1191,10 @@ class Strace(ApiBase):
 
       @staticmethod
       def _handle_unknown(function, args, result):
-        pass
-#         raise TracingFailure(
-#             'Unexpected/unimplemented trace %s(%s)= %s' %
-#             (function, args, result),
-#             None, None, None)
+        raise TracingFailure(
+            'Unexpected/unimplemented trace %s(%s)= %s' %
+            (function, args, result),
+            None, None, None)
 
       def _handling_forking(self, name, result):
         """Transfers cwd."""
