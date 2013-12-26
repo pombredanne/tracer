@@ -1186,6 +1186,10 @@ class Strace(ApiBase):
       def handle_newfstatat(self, _args, _result):
         pass
 
+      @parse_args(r'\"(.+?)\", \{.+?, \.\.\.\}', True)
+      def handle_lstat64(self, _args, _result):
+        self._handle_file(args[0], Results.File.TOUCHED)
+
       def handle_utimensat(self, _args, _result):
         pass
 
