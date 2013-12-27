@@ -1046,6 +1046,11 @@ class Strace(ApiBase):
         # TODO(maruel): Look at result?
         self._handle_file(args[0], Results.File.WRITE)
 
+      @parse_args(r'^\"(.+?)\", (\d+), (\d+)$', False)
+      def handle_chown32(self, args, _result):
+        # TODO(maruel): Look at result?
+        self._handle_file(args[0], Results.File.WRITE)
+
       def handle_clone(self, _args, result):
         self._handling_forking('clone', result)
 
